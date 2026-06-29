@@ -59,8 +59,8 @@ public class Journal {
             System.out.println("Дневник пуст.");
             return Collections.emptyList();
         }
-
-        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8).stream().skip(1).collect(Collectors.toList());
+        // удален .skip(1)
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8).stream().collect(Collectors.toList());
         System.out.println("--- Записи дневника ---");
         lines.forEach(System.out::println);
         System.out.println("-----------------------");
